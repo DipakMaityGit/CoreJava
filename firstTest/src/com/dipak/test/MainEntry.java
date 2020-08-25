@@ -1,12 +1,13 @@
 package com.dipak.test;
 
+import com.dipak.test.array.ArrayCopy;
 import com.dipak.test.search.BinarySearch;
 import com.dipak.test.search.LinearSearch;
 import com.dipak.test.sorting.*;
 
 public class MainEntry {
     public static void main(String[] args) {
-        int executionNumber = 7;
+        int executionNumber = 8;
         switch (executionNumber){
             case 0:
                 new BubbleSort().sort();
@@ -32,6 +33,8 @@ public class MainEntry {
             case 7:
                 new BinarySearch().search();
                 break;
+            case 8:
+                new ArrayCopy().arrayCloning();
         }
     }
 }
