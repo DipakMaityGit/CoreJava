@@ -13,6 +13,8 @@ public class MainEntry {
         System.out.println("Total principle accumulated : "+ String.format("%.2f",(principle1+principle3)));*/
 
        // double principle3 = new SIP().getGrossAfterStopSIP(50000,120d,15000,10,14,60);
-        new PDFDecrypt().decryptPDF();
+       // new PDFDecrypt().decryptPDF();
+
+        double principle2 = new SIP().getTargetDetails(100000d,10000000d,50000d,5d,6d);
     }
 }
