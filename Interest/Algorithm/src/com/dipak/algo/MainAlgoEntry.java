@@ -8,6 +8,7 @@ public class MainAlgoEntry {
         // new Factorial().execute();
         // new SumFromDigits().execute();
         // new SinglyLinkedList().execute();
-        new CircularLinkedList().execute();
+        // new CircularLinkedList().execute();
+        new DoubleLinkList().execute();
     }
 }
