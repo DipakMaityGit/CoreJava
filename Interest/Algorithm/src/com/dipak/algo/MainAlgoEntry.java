@@ -9,6 +9,13 @@ public class MainAlgoEntry {
         // new SumFromDigits().execute();
         // new SinglyLinkedList().execute();
         // new CircularLinkedList().execute();
-        new DoubleLinkList().execute();
+        // new DoubleLinkList().execute();
+        // new JavaStack().execute();
+        // new JavaQueue().execute();
+        // new JavaPriorityQ().execute();
+        // new JavaSimpleBinaryTree().execute();
+        // new JavaGraph().execute();
+        // new JavaGraphBFS().execute();
+        new JavaGraphDFS().execute();
     }
 }

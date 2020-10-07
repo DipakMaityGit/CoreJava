@@ -11,10 +11,14 @@ public class JavaSimpleBinaryTree {
         root.left.left = new Node(7);
         root.right.left = new Node(15);
         root.right.right = new Node(8);
-        System.out.println("Inorder traversal : \n");
+        System.out.println("\nInorder traversal : \n");
         inOrder_trav(root);
         insertKey(root, 12);
-        System.out.println("Inorder after insertion : \n");
+        System.out.println("\nInorder after insertion : \n");
+        inOrder_trav(root);
+
+        delete(root,11);
+        System.out.println("\nAfter deletion : \n");
         inOrder_trav(root);
     }
     Node root;
@@ -58,6 +62,60 @@ public class JavaSimpleBinaryTree {
                 q.add(temp.right);
             }
         }
+    }
 
+    private void delete(Node root, int key){
+        if(root == null) return;
+        if(root.left == null && root.right == null){
+            if(root.data == key) root = null;
+            else return;
+        }
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        Node temp = null, keyNode = null;
+        while (!q.isEmpty()){
+            temp = q.peek();
+            q.remove();
+            if(temp.data == key){
+                keyNode = temp;
+            }
+            if(temp.left != null) q.add(temp.left);
+            if(temp.right != null) q.add(temp.right);
+        }
+        if(keyNode != null){
+            int x = temp.data;
+            deleteDeepestNode(root,temp);
+            keyNode.data = x;
+        }
+    }
+    private void deleteDeepestNode(Node root,Node keyNode){
+        Queue<Node> q= new LinkedList<>();
+        q.add(root);
+        Node temp = null;
+        while (!q.isEmpty()){
+            temp = q.peek();
+            q.remove();
+
+            if(temp == keyNode){
+                temp = null;
+                return;
+            }
+            if(temp.right != null){
+                if(temp.right == keyNode){
+                    temp.right = null;
+                    return;
+                }else{
+                    q.add(temp.right);
+                }
+            }
+            if(temp.left != null){
+                if(temp.left == keyNode){
+                    temp.left = null;
+                    return;
+                }else{
+                    q.add(temp.left);
+                }
+            }
+        }
     }
 }
